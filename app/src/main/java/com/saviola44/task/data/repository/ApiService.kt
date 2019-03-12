@@ -9,5 +9,5 @@ interface ApiService {
     @GET("/search/repositories")
     fun getRepos(@Query("page") page: Long,
                  @Query("per_page") perPage: Int,
-                 @Query("q" )query: String = "music"): Observable<RepoResponse>
+                 @Query("q" )query: String): Observable<RepoResponse>
 }
