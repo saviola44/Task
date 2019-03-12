@@ -1,7 +1,5 @@
 package com.saviola44.task.ui
 
-import android.util.Log
-import androidx.annotation.MainThread
 import androidx.lifecycle.ViewModel
 import com.saviola44.task.ui.common.Action
 import com.saviola44.task.ui.common.SingleLiveEvent

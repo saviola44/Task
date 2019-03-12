@@ -2,7 +2,6 @@ package com.saviola44.task.data.repository.search.pagination
 
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.DataSource
-import androidx.paging.PageKeyedDataSource
 import com.saviola44.task.data.model.remote.Repo
 import com.saviola44.task.ui.common.Action
 import io.reactivex.disposables.CompositeDisposable

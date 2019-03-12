@@ -6,11 +6,12 @@
     <dimen name="height_toolbar">48dp</dimen>
     <dimen name="textsize_toolbar">16sp</dimen>
     <dimen name="size_avatar">96dp</dimen>
+    <dimen name="textsize_main_emty_list_info">14sp</dimen>
     <dimen name="textsize_item_repo_name">18sp</dimen>
     <dimen name="textsize_item_repo_lang">14sp</dimen>
     <dimen name="size_item_repo_star">24dp</dimen>
     <dimen name="textsize_item_repo_stars">14sp</dimen>
-    <dimen name="textsize_main_emty_list_info">14sp</dimen>
+
 
 
 </resources>
