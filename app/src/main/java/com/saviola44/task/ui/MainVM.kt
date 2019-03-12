@@ -43,6 +43,10 @@ class MainVM : ViewModel() {
         compositeDisposable.add(disposable)
     }
 
+    override fun onCleared() {
+        super.onCleared()
+        compositeDisposable.clear()
+    }
 
     private fun dispatchAction(action: Action) {
         actions.postValue(action)
