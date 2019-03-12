@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Task</string>
+    <string name="main_toolbar_task">Task</string>
+    <string name="error_no_internet_connection">Network connectivity limited or unavailable"</string>
+    <string name="error_occured">Error occured</string>
+    <string name="main_no_result">There are no results that match your search</string>
+</resources>

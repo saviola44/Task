@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+                name="vh"
+                type="com.saviola44.task.ui.RepoListAdapter.ViewHolder"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_item_repo_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:onClick="@{ ()->vh.onItemClick() }">
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_left"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/margin_horizontal_common"/>
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_right"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/margin_horizontal_common"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_item_repo_avatar"
+                android:layout_width="@dimen/size_avatar"
+                android:layout_height="@dimen/size_avatar"
+                app:layout_constraintEnd_toEndOf="parent    "
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                avatar="@{ vh.repoObservable.owner.avatar_url}"
+        />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_item_repo_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/guideline_left"
+                app:layout_constraintEnd_toStartOf="@id/iv_item_repo_avatar"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="8dp"
+                android:textSize="@dimen/textsize_item_repo_name"
+                android:textColor="@android:color/black"
+                android:text="@{vh.repoObservable.name}"
+                tools:text="Repository name"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_item_repo_lang"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/guideline_left"
+                app:layout_constraintEnd_toStartOf="@id/iv_item_repo_avatar"
+                app:layout_constraintTop_toBottomOf="@id/tv_item_repo_name"
+                android:layout_marginTop="8dp"
+                android:textSize="@dimen/textsize_item_repo_lang"
+                android:textColor="@android:color/black"
+                android:text="@{vh.repoObservable.language}"
+                tools:text="Kotlin"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_item_repo_star"
+                android:layout_width="@dimen/size_item_repo_star"
+                android:layout_height="@dimen/size_item_repo_star"
+                app:layout_constraintStart_toStartOf="@id/guideline_left"
+                app:layout_constraintTop_toBottomOf="@id/tv_item_repo_lang"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ic_star"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_item_repo_star"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/iv_item_repo_star"
+                app:layout_constraintEnd_toStartOf="@id/iv_item_repo_avatar"
+                app:layout_constraintTop_toTopOf="@id/iv_item_repo_star"
+                app:layout_constraintBottom_toBottomOf="@id/iv_item_repo_star"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:textSize="@dimen/textsize_item_repo_stars"
+                tools:text="2324"
+                android:text="@{String.valueOf(vh.repoObservable.stargazers_count)}"
+                android:textColor="@android:color/black"/>
+
+        <View
+                android:id="@+id/v_item_repo_separator"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/bckg_alabaster"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
